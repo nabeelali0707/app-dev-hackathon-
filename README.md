@@ -30,4 +30,11 @@ JWTs for all five roles are issued by `POST /audit/v1/rbac-matrix`:
 | General Viewer | user-viewer | tenant-alpha read-only |
 
 ## Known limitations
-State is held in-process memory (the single Node event loop serialises checkout reservation, giving zero overselling). The mobile app is not included in this submission.
+State is held in-process memory (the single Node event loop serialises checkout reservation, giving zero overselling). 
+
+
+
+## Mobile (React Native / Expo)
+Source in `mobile/` (`App.js`). Sign in as any of the five demo roles, browse standings and match scores cached in SQLite, record scoring events offline (queued in SQLite and auto-synced through `POST /api/v1/offline-sync` when connectivity returns; per-action conflict results are shown in the Queue tab), and buy merchandise. Tokens are stored with expo-secure-store (Android Keystore). Default server `http://10.0.2.2:8080` (emulator → host), editable on the sign-in screen.
+
+Build: `cd mobile && npm install && npx expo prebuild -p android && cd android && ./gradlew assembleRelease`, then copy the APK to `mobile/release/app-release.apk`.

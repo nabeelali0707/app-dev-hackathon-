@@ -11,6 +11,6 @@
 | FR-2.3 | backend/src/ops.js (checkout, inventory, buildPdf) | tests/smoke.js (20-request burst, PDF) |
 | FR-5.1 | backend/src/ops.js (POLICY, probe, jwtSign, jwtVerify) | tests/unit.test.js (jwt, rbac); tests/smoke.js (probe matrix) |
 | NFR-3 | backend/src/ops.js (checkout synchronous reserve/commit/release) | tests/smoke.js (burst) |
-| NFR-4 | backend/src/server.js (offlineSync) | — |
-| NFR-5 | backend/src/server.js (rate limiter, 413, validation), backend/src/ops.js (JWT verification) | tests/unit.test.js (jwt) |
+| NFR-4 | backend/src/server.js (offlineSync); mobile/App.js (SQLite cache + action queue, NetInfo auto-sync, conflict display) | tests/smoke.js |
+| NFR-5 | mobile/App.js (tokens in expo-secure-store / Android Keystore); backend/src/server.js (rate limiter, 413, validation), backend/src/ops.js (JWT verification) | tests/unit.test.js (jwt) |
 | NFR-7 | docker-compose.yml, backend/Dockerfile | — |
